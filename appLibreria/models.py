@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Autor(models.Model):
     nombre = models.CharField(max_length=25)
-
+    # esto es una pruebs
     def str(self):
         return self.nombre
 
