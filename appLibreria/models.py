@@ -4,6 +4,7 @@ from django.db import models
 class Autor(models.Model):
     nombre = models.CharField(max_length=25)
     # esto es una prueba3
+    # esto es una prueba cuatro
     def str(self):
         return self.nombre
 
