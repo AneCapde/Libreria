@@ -35,7 +35,7 @@ class Coleccion(models.Model):
 class Comic(models.Model):
     nombreComic = models.CharField(max_length=35)
     numPaginas = models.IntegerField()
-    coleccion = models.ForeignKey(Coleccion, on_delete=models.CASCADE, default=0)
+    coleccion_id = models.ForeignKey(Coleccion, on_delete=models.CASCADE, default=0)
 
     def str(self):
         return self.nombreComic
