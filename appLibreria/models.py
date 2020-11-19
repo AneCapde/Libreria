@@ -9,14 +9,14 @@ class Autor(models.Model):
 
 class Coleccion(models.Model):
     nombreColeccion = models.CharField(max_length=35)
-    primeraPublicacion = models.dateField()
+    primeraPublicacion = models.DateField()
     ESTADOS = (
-        (FIN, 'Finalizado'),
-        (ENCURSO,'En publicación'),
-        (PROX, 'No ha salido aún'),
+        ('FIN', 'Finalizado'),
+        ('ENCURSO','En publicación'),
+        ('PROX', 'No ha salido aún'),
     )
 
-    estado = models.CharField(choices=ESTADOS)
+    estado = models.CharField(choices=ESTADOS, max_length=40)
 
     def str(self):
         return self.nombre
