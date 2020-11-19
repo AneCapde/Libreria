@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.views.generic import ListView, DeleteView
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from  .models import Autor, Coleccion,  Comic, Tag
 
