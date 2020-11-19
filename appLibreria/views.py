@@ -11,10 +11,10 @@ class Coleccion(DetailView):
 	template_name = 'coleccion.html'
 	queryset = get_list_or_404(Coleccion.objects.all())
 
-	def get_context_data(self, **kwargs):
-		context = super().get_context_data(**kwargs)
-		id_ = self.kwargs.get("pk")
-		subcategory = Coleccion.objects.get(pk=id_)
-		context['lista_rutas'] =  Coleccion.objects.filter(pais = pais_)
-		context['lista_hotel'] =  Hotel.objects.filter(pais = pais_)
-		return context
+	# def get_context_data(self, **kwargs):
+	# 	context = super().get_context_data(**kwargs)
+	# 	id_ = self.kwargs.get("pk")
+	# 	subcategory = Coleccion.objects.get(pk=id_)
+	# 	context['lista_rutas'] =  Coleccion.objects.filter(pais = )
+	# 	context['lista_hotel'] =  Hotel.objects.filter(pais = pais_)
+	# 	return context
