@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Autor(models.Model):
     nombre = models.CharField(max_length=25)
+    anoNacimiento = models.IntegerField()
     # esto es una prueba3
     # esto es una prueba cuatro
     def str(self):
