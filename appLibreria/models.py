@@ -24,7 +24,7 @@ class Coleccion(models.Model):
     ESTADOS = (
         ('FIN', 'Finalizado'),
         ('ENCURSO','En publicación'),
-        ('PROX', 'No ha salido aún'),
+        ('PROX', 'Sin publicar'),
     )
 
     estado = models.CharField(choices=ESTADOS, max_length=40)
