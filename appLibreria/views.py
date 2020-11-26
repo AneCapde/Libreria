@@ -17,14 +17,84 @@ class Index(ListView):
  		context['coleccion_list'] = Coleccion.objects.all()
  		return context
 
-# class Coleccion(DetailView):
-# 	template_name = 'coleccion.html'
-# 	queryset = get_list_or_404(Coleccion.objects.all())
+ class Coleccion(DetailView):
+ 	template_name = 'coleccion.html'
+ 	queryset = get_list_or_404(Coleccion.objects.all())
 
-	# def get_context_data(self, **kwargs):
-	# 	context = super().get_context_data(**kwargs)
-	# 	id_ = self.kwargs.get("pk")
-	# 	coleccion = Coleccion.objects.get(pk=id_)
-	# 	context['tags_coleccion'] =  coleccion.Tags.all()
-	# 	context['autores_coleccion'] =  coleccion.Autors.all()
-	# 	return context
+	 def get_context_data(self, **kwargs):
+	 	context = super().get_context_data(**kwargs)
+	 	id_ = self.kwargs.get("pk")
+	 	coleccion = Coleccion.objects.get(pk=id_)
+	 	context['tags_coleccion'] =  coleccion.Tags.all()
+	 	context['autores_coleccion'] =  coleccion.Autors.all()
+	 	return context
+
+ class AutorList(ListView):
+	 template_name = 'autorList.html'
+
+	 model = Autor
+
+ class TagList(ListView):
+	 template_name = 'tagList.html'
+
+	 model = Tag
+
+	def get_context_data(self, **kwargs):
+		# Cargar el contexto base
+ 		context = super().get_context_data(**kwargs)
+ 		# Añadir un listado de departamentos
+ 		context['coleccion_list'] = Coleccion.objects.all()
+		context['autor_list'] = Autor.objects.all()
+ 		return context
+
+ class AutorDetail(ListView):
+	 template_name = 'autorDetail.html'
+
+	 model = Autor
+
+	def get_context_data(self, **kwargs):
+		# Cargar el contexto base
+ 		context = super().get_context_data(**kwargs)
+ 		# Añadir un listado de departamentos
+ 		context['coleccion_list'] = Coleccion.objects.all()
+ 		return context
+
+ class ComicDetail(ListView):
+	 template_name = 'comicDetail.html'
+
+	 model = Comic
+
+	def get_context_data(self, **kwargs):
+		# Cargar el contexto base
+ 		context = super().get_context_data(**kwargs)
+ 		# Añadir un listado de departamentos
+ 		context['coleccion_list'] = Coleccion.objects.all()
+		context['autor_list'] = Autor.objects.all()
+		context['tag_list'] = Tag.objects.all()
+ 		return context
+
+ class ColeccionDetail(ListView):
+	 template_name = 'coleccionDetail.html'
+
+	 model = Coleccion
+
+	def get_context_data(self, **kwargs):
+		# Cargar el contexto base
+ 		context = super().get_context_data(**kwargs)
+ 		# Añadir un listado de departamentos
+		context['autor_list'] = Autor.objects.all()
+		context['tag_list'] = Tag.objects.all()
+ 		return context
+
+ class PageView(ListView):
+	 template_name = 'pageView.html'
+
+	 model = Comic
+
+	def get_context_data(self, **kwargs):
+		# Cargar el contexto base
+ 		context = super().get_context_data(**kwargs)
+ 		# Añadir un listado de departamentos
+		context['autor_list'] = Autor.objects.all()
+		context['tag_list'] = Tag.objects.all()
+ 		return context
