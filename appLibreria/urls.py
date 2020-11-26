@@ -2,7 +2,7 @@ from django.urls import path
 from appLibreria.views import Index, ColeccionList, AutorList, TagList, AutorDetail, ComicDetail, ColeccionDetail, PageView
 
 urlpatterns = [
- path('comic/', Index.as_view(), name='index'),
+ path('comics/', Index.as_view(), name='index'),
  path('colecciones/', ColeccionList.as_view(), name='coleccionList'),
  path('autores/', AutorList.as_view(), name='autorList'),
  path('tags/', TagList.as_view(), name='tagList'),

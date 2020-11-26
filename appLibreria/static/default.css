@@ -231,6 +231,12 @@ body{
 	background:url(img/star2.jpg) no-repeat center left;
 }
 
+#sidebar .nav .selected{
+	color:#FFF000;
+	background:url(img/star2.jpg) no-repeat center left;
+	pointer-events: none;
+}
+
 #gallery{
 	padding:0; 
 	margin:-10px 0 0 0; 
