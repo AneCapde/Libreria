@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView#, DetailView, TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from  .models import Autor, Coleccion, Comic, Tag
 
@@ -41,9 +41,9 @@ class TagList(ListView):
 
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
- 		context = super().get_context_data(**kwargs)
- 		# Añadir un listado de departamentos
- 		context['coleccion_list'] = Coleccion.Tag.all()
+		context = super().get_context_data(**kwargs)
+		# Añadir un listado de departamentos
+		context['coleccion_list'] = Coleccion.Tag.all()
 		context['autor_list'] = Coleccion.Autor.all()
 		return context
 
@@ -66,12 +66,12 @@ class ComicDetail(ListView):
 
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
- 		context = super().get_context_data(**kwargs)
- 		# Añadir un listado de departamentos
- 		context['coleccion_list'] = Coleccion.objects.all()
+		context = super().get_context_data(**kwargs)
+		# Añadir un listado de departamentos
+		context['coleccion_list'] = Coleccion.objects.all()
 		context['autor_list'] = Autor.objects.all()
 		context['tag_list'] = Tag.objects.all()
- 		return context
+		return context
 
 class ColeccionDetail(ListView):
 	template_name = 'coleccionDetail.html'
@@ -80,11 +80,11 @@ class ColeccionDetail(ListView):
 
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
- 		context = super().get_context_data(**kwargs)
- 		# Añadir un listado de departamentos
+		context = super().get_context_data(**kwargs)
+		# Añadir un listado de departamentos
 		context['autor_list'] = Autor.objects.all()
 		context['tag_list'] = Tag.objects.all()
- 		return context
+		return context
 
 class PageView(ListView):
 	template_name = 'pageView.html'
@@ -93,8 +93,8 @@ class PageView(ListView):
 
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
- 		context = super().get_context_data(**kwargs)
- 		# Añadir un listado de departamentos
+		context = super().get_context_data(**kwargs)
+		# Añadir un listado de departamentos
 		context['autor_list'] = Autor.objects.all()
 		context['tag_list'] = Tag.objects.all()
- 		return context
+		return context
