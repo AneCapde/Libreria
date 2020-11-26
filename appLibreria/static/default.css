@@ -8,8 +8,9 @@ body{
 }
 
 #container{
-	background:url(img/full.jpg) repeat-y top left #000;
-	width:720px;
+	/*background:url(img/full.jpg) repeat-y top left #000; */
+	background:url(img/full.jpg) repeat-y top right #000;
+	width:1024px;
 	min-height:700px;
 	margin:auto;
 	font:12px Arial, Helvetica, sans-serif;
@@ -17,7 +18,7 @@ body{
 
 #content{
 	background:url(img/middle.jpg) no-repeat top right transparent;
-	width:434px;
+	width:739px;
 	color:#DDD;
 	text-align:left;
 	padding-top:1px;
@@ -145,6 +146,7 @@ body{
 
 #title{
 	background:url(img/title.jpg) no-repeat top left transparent;
+
 	height:372px;
 }
 
