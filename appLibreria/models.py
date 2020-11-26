@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 # Create your models here.
 class Autor(models.Model):
@@ -9,12 +10,15 @@ class Autor(models.Model):
     def str(self):
         return self.nombre
 
+    def get_absolute_url(self):
+        return reverse('autorDetail', args=[str(self.pk)])
+
 class Tag(models.Model):
     descripcion = models.CharField(max_length=25)
 
     def str(self):
         return self.descripcion
-
+        
 class Coleccion(models.Model):
     nombreColeccion = models.CharField(max_length=35)
     primeraPublicacion = models.DateField()
@@ -31,6 +35,9 @@ class Coleccion(models.Model):
 
     def str(self):
         return self.nombreColeccion
+    
+    def get_absolute_url(self):
+        return reverse('coleccionDetail', args=[str(self.pk)])
 
 class Comic(models.Model):
     nombreComic = models.CharField(max_length=35)
@@ -39,3 +46,6 @@ class Comic(models.Model):
 
     def str(self):
         return self.nombreComic
+    
+    def get_absolute_url(self):
+        return reverse('comicDetail', args=[str(self.pk)])
