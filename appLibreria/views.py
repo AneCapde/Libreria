@@ -59,7 +59,7 @@ class AutorDetail(ListView):
  		context['coleccion_list'] = Coleccion.objects.all()
  		return context
 
- class ComicDetail(ListView):
+class ComicDetail(ListView):
 	template_name = 'comicDetail.html'
 
 	model = Comic
@@ -73,7 +73,7 @@ class AutorDetail(ListView):
 		context['tag_list'] = Tag.objects.all()
  		return context
 
- class ColeccionDetail(ListView):
+class ColeccionDetail(ListView):
 	template_name = 'coleccionDetail.html'
 
 	model = Coleccion
@@ -86,7 +86,7 @@ class AutorDetail(ListView):
 		context['tag_list'] = Tag.objects.all()
  		return context
 
- class PageView(ListView):
+class PageView(ListView):
 	template_name = 'pageView.html'
 
 	model = Comic
