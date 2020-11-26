@@ -1,11 +1,21 @@
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import TemplateView, ListView#, DetailView, TemplateView
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from  .models import Autor, Coleccion,  Comic, Tag
+from  .models import Autor, Coleccion, Comic, Tag
 
-class Index(TemplateView):
+class Index(ListView):
 	template_name = 'index.html'
-	# queryset = get_list_or_404(Coleccion.objects.all())
+	#Portada, titulo, a que coleccion pertenece, tags y autor x10
+	#en la barra lateral poner recomendaciones (al azar)
+	#queryset = get_list_or_404(Coleccion.objects.all())
+	model = Comic
+
+	def get_context_data(self, **kwargs):
+		# Cargar el contexto base
+ 		context = super().get_context_data(**kwargs)
+ 		# Añadir un listado de departamentos
+ 		context['coleccion_list'] = Coleccion.objects.all()
+ 		return context
 
 # class Coleccion(DetailView):
 # 	template_name = 'coleccion.html'

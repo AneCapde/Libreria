@@ -9,7 +9,6 @@ class Autor(models.Model):
     def str(self):
         return self.nombre
 
-
 class Tag(models.Model):
     descripcion = models.CharField(max_length=25)
 
