@@ -37,21 +37,18 @@
 		</div>
 		{% endblock barraDer %}
 	</div>
-	<div id="content"><!--BFHUVJDASOKjasIFOEAHUPSAIdiobhlauigoaejfdcskphUGFPWDsiokHLGIOFD`SAP-->
-		{% block contenido %}
+	{% block contenido %}
+	<div id="content">
 		
 
-		<ul>
-		{% for empleado in object_list %}
+		{% for comic in object_list %}
 			
-			<h1>{{ empleado.nombreComic }}</h1>
-			<h3>by michael on october 26, 2006</h3>
-			<p><img src="img/skate.jpg" alt="Skater" class="l_blog" />If you need to make more room for the blog titles and keep them on one line, simply adjust the size of the #content H1 style. Bold text looks <b>like this</b>. It's 'Arial Black' and #FFF just like the title and the headers, however, if the person viewing the site removed 'Arial Black' then the font-weight:600 property will take care of bolding it as much as possible.</p>
-			<p>Emphesized or italisized text looks <em>like this</em>. I don't think the look of Arial's italics stands out, so I usually swap it out with Georgia.</p>
+			<h1>{{ comic.nombreComic }}</h1>
+			<h3></h3>
+			<p><a href="{{comic.get_absolute_url}}"><img src="{% static ''|add:comic.nombreComic|add:'.PNG' %}" alt="{{ comic.nombreComic }}" class="r_blog" /></a>Right under the navigation menu to the right you will see a heading called Recent Updates. If you hover over the news items a short summary will pop up and allow you to click to get to another page. You can use this as a link list giving people a short description of what your link is about. I learned the technique from Stu at <a href="http://www.cssplay.co.uk/">CSS Play</a>. The original demo was to display a small photo gallery this way but I adapted it for text.</p>
 			<div class="blogfoot"><span class="foot_top">Filed under: <a href="#">Templates</a>, <a href="#">Technology</a>, <a href="#">Latin</a>, <a href="#">Web-design</a></span><br /><span class="foot_bottom"><a href="#">permalink</a> | <a href="#">comments</a></span></div>
 		
 		{% endfor %}
- 		</ul>
 
 		
 		<h1>hover news &amp; quotes</h1>
@@ -78,8 +75,8 @@
 			<li>Vivamus viverra. Nullam turpis</li>
 		</ol>
 		<div class="blogfoot"><span class="foot_top">Filed under: <a href="#">Templates</a>, <a href="#">Technology</a>, <a href="#">Latin</a>, <a href="#">Web-design</a></span><br /><span class="foot_bottom"><a href="#">permalink</a> | <a href="#">comments</a></span></div>
-	{% endblock contenido %}
 	</div>
+	{% endblock contenido %}
 	<div id="footer">
 		<div class="footer_links">
 		<ul>

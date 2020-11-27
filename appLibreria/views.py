@@ -14,7 +14,7 @@ class Index(ListView):
 		# Cargar el contexto base
  		context = super().get_context_data(**kwargs)
  		# Añadir un listado de departamentos
- 		context['coleccion_list'] = Coleccion.objects.all()
+ 		context['lista_coleccion'] = Coleccion.objects.all()
  		return context
 		 
 class ColeccionList(ListView):
