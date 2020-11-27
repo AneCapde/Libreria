@@ -1,5 +1,5 @@
 from django.urls import path
-from appLibreria.views import Index, ColeccionList, AutorList, TagList, AutorDetail, ComicDetail, ColeccionDetail, PageView
+from appLibreria.views import Index, ColeccionList, AutorList, TagList, AutorDetail, ComicDetail, ColeccionDetail, PageView, Prueba
 
 urlpatterns = [
  path('comics/', Index.as_view(), name='index'),
@@ -10,4 +10,5 @@ urlpatterns = [
  path('comic/<int:pk>/', ComicDetail.as_view(), name='comicDetail'),
  path('coleccion/<int:pk>/', ColeccionDetail.as_view(), name='coleccionDetail'),
  path('comic/<int:pk>/numeroPaginahelp', PageView.as_view(), name='pageView'),
+ path('prueba/', Prueba.as_view(), name='baseIndividual'),
 ]

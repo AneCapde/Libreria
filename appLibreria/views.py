@@ -97,3 +97,8 @@ class PageView(ListView):
 		context['autor_list'] = Autor.objects.all()
 		context['tag_list'] = Tag.objects.all()
 		return context
+
+class Prueba(ListView):
+	template_name = 'baseIndividual.html'
+
+	model = Comic

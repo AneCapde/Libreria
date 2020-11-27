@@ -143,6 +143,12 @@ body{
 	min-height:700px;
 }
 
+#upperside{
+	float:top;
+	width:286px;
+	min-height:286px;
+}
+
 #title{
 	background:url(img/title.jpg) no-repeat top left transparent;
 	height:372px;
