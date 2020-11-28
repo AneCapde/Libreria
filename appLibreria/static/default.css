@@ -105,6 +105,15 @@ body{
 	margin:4px 10px 4px 8px;
 }
 
+#content img.responsive-img{
+	width: 150px;
+	height: 200px;
+	margin: 20px;  
+}
+#content .espacio {
+	padding-bottom: 20px;
+}
+
 #content a:hover img{border-color:#ED145A;}
 
 #content ul,#content ol{
