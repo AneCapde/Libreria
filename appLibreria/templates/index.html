@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <head>
@@ -40,12 +41,12 @@
 	<div id="content">
 		{% block contenido %}
 		{% for comic in object_list %}
-			
-			<h1>{{ comic.nombreComic }}</h1>
-			<h3></h3>
-			<p><a href="{{comic.get_absolute_url}}"><img src="{% static 'img/'|add:comic.nombreComic|add:'.png' %}" alt="{{ comic.nombreComic }}" class="r_blog" /></a>Right under the navigation menu to the right you will see a heading called Recent Updates. If you hover over the news items a short summary will pop up and allow you to click to get to another page. You can use this as a link list giving people a short description of what your link is about. I learned the technique from Stu at <a href="http://www.cssplay.co.uk/">CSS Play</a>. The original demo was to display a small photo gallery this way but I adapted it for text.</p>
-			<div class="blogfoot"><span class="foot_top">Filed under: <a href="#">Templates</a>, <a href="#">Technology</a>, <a href="#">Latin</a>, <a href="#">Web-design</a></span><br /><span class="foot_bottom"><a href="#">permalink</a> | <a href="#">comments</a></span></div>
-		
+			<div class="espacio">
+				<h1>{{ comic.nombreComic }}</h1>
+				<h3></h3>
+				<p><a href="{{comic.get_absolute_url}}"><img src="{% static 'img/comics/'|add:comic.nombreComic|add:'.png' %}" alt="{{ comic.nombreComic }}" class="responsive-img r_blog" /></a>Right under the navigation menu to the right you will see a heading called Recent Updates. If you hover over the news items a short summary will pop up and allow you to click to get to another page. You can use this as a link list giving people a short description of what your link is about. I learned the technique from Stu at <a href="http://www.cssplay.co.uk/">CSS Play</a>. The original demo was to display a small photo gallery this way but I adapted it for text.</p>
+				<div class="blogfoot"><span class="foot_top">Filed under: <a href="#">Templates</a>, <a href="#">Technology</a>, <a href="#">Latin</a>, <a href="#">Web-design</a></span><br /><span class="foot_bottom"><a href="#">permalink</a> | <a href="#">comments</a></span></div>
+			</div>
 		{% endfor %}
 
 		
