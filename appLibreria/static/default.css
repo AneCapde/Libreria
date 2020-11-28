@@ -144,6 +144,12 @@ body{
 	min-height:700px;
 }
 
+#upperside{
+	float:top;
+	width:286px;
+	min-height:286px;
+}
+
 #title{
 	background:url(img/title.jpg) no-repeat top left transparent;
 
@@ -231,6 +237,12 @@ body{
 #sidebar .nav a:hover{
 	color:#FFF000;
 	background:url(img/star2.jpg) no-repeat center left;
+}
+
+#sidebar .nav .selected{
+	color:#FFF000;
+	background:url(img/star2.jpg) no-repeat center left;
+	pointer-events: none;
 }
 
 #gallery{
