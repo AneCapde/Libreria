@@ -47,6 +47,17 @@ body{
 	line-height:18px;
 }
 
+#content .coleccion{
+	background-color: #ED145A;
+	color:#000;
+	font:13px "Arial Black", Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:-1px;
+	margin:0 60px 10px 30px;
+	padding-left:4px;
+	line-height:18px;
+}
+
 #content p{
 	font:12px Arial, Helvetica, sans-serif;
 	line-height:20px;
@@ -106,12 +117,17 @@ body{
 }
 
 #content img.responsive-img{
-	width: 150px;
-	height: 200px;
-	margin: 20px;  
+	width: 130px;
+	height: 180px;
+	margin: 10px;
+	margin-right: 50px;  
 }
 #content .espacio {
-	padding-bottom: 20px;
+	padding-bottom: 40px;
+}
+#content .espacio .texto{
+	margin-left: 50px;
+	margin-top: 20px;
 }
 
 #content a:hover img{border-color:#ED145A;}
