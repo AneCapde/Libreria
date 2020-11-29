@@ -256,10 +256,17 @@ body{
 	border-top:none;
 }
 
+#sidebar p.recomendaciones{
+	margin-bottom: 10px;
+}
+
 #sidebar a{
 	color:#ED145A;
 	font-weight:900;
 	text-decoration:none;
+}
+#sidebar a.link-recomendacion{
+	color: #FFF;
 }
 
 #sidebar a:hover{
