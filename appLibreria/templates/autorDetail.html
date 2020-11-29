@@ -2,9 +2,13 @@
 {% load static %}
 <!--Bloques de la barra lateral:-->
 {% block foto %} <!--Aquí va la foto del objeto que estemos viendo (autor, comic o coleccion)-->
+<img src="{% static 'img/autores/'|add:object.nombre|add:'.png' %}" alt="{{ object.nombre }}" class="responsive-img r_blog" width="200" height="200" />
 {% endblock foto %}
 
 {% block info %} <!--Aquí se pone la info de lo que corresponda-->
+<h3>Nombre: {{ object.nombre }}  </h3>
+<h3>Apellido: {{object.apellido}} </h3>
+<h3>Año Nacimiento: {{ object.anyoNacimiento}} </h3>
 {% endblock info %}
 
 {% block menu %}<!--Esto es el menú donde irán los links a las listas de los modelos, igual que en la página principal-->
@@ -17,4 +21,11 @@
 {% endblock menu %}
 
 {% block contenido %}<!--Lo de la "izquierda"-->
+
+  {% for coleccion in object.coleccion_set.all %}
+  <div class="espacio">
+    <h1> {{coleccion.nombreColeccion}} </h1>
+    <p><a href="{{coleccion.get_absolute_url}}"><img src="{% static 'img/colecciones/'|add:coleccion.nombreColeccion|add:'.png' %}" alt="{{ coleccion.nombreColeccion }}" class="responsive-img r_blog" /></a>Right under the navigation menu to the right you will see a heading called Recent Updates. If you hover over the news items a short summary will pop up and allow you to click to get to another page. You can use this as a link list giving people a short description of what your link is about. I learned the technique from Stu at <a href="http://www.cssplay.co.uk/">CSS Play</a>. The original demo was to display a small photo gallery this way but I adapted it for text.</p>
+  </div>
+    {% endfor %}
 {% endblock contenido %}
