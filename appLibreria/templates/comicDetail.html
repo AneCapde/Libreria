@@ -6,19 +6,20 @@
 {% endblock foto %}
 
 {% block info %} <!--Aquí se pone la info de lo que corresponda-->
-    <h2>{{object.nombreComic}}</h2>
-    <h4>Colección: {{object.coleccion.nombreColeccion}}</h4>
-	<h4>
+    <h1>{{object.nombreComic}}</h1>
+    <h3>Colección: {{object.coleccion.nombreColeccion}}</h3>
+	<h3>
          Autor(es): 
         {% for autor in object.coleccion.autores.all %}
-        {{autor.nombre}} {{autor.apellido}}  
+        <a href="{{autor.get_absolute_url}}">{{autor.nombre}} {{autor.apellido}}</a>  
         {% endfor %}
-    </h4>
-    <h4> 
+    </h3>
+    <h3> 
+        Tags: 
         {% for tag in object.coleccion.tags.all %}
-        {{tag.descripcion}} 
+        {{tag.descripcion}}
         {% endfor %}
-    </h4>
+    </h3>
 {% endblock info %}
 
 {% block menu %}<!--Esto es el menú donde irán los links a las listas de los modelos, igual que en la página principal-->
