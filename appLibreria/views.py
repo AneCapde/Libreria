@@ -39,6 +39,6 @@ class PageView(DetailView):
 	model = Comic
 
 
-class Prueba(ListView):
+class Prueba(ListView):#Próximamente con JS
 	template_name = 'baseIndividual.html'
 	model = Comic
