@@ -5,16 +5,7 @@ from  .models import Autor, Coleccion, Comic, Tag
 
 class Index(ListView):
 	template_name = 'index.html'
-	#Portada, titulo, a que coleccion pertenece, tags y autor x10
-	#en la barra lateral poner recomendaciones (al azar)
-	#queryset = get_list_or_404(Coleccion.objects.all())
 	model = Comic
-
-	def get_context_data(self, **kwargs):
-		# Cargar el contexto base
- 		context = super().get_context_data(**kwargs)
- 		context['lista_coleccion'] = Coleccion.objects.all()
- 		return context
 		 
 class ColeccionList(ListView):
 	template_name = 'coleccionList.html'
