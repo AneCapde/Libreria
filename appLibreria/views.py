@@ -13,7 +13,6 @@ class Index(ListView):
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
  		context = super().get_context_data(**kwargs)
- 		# Añadir un listado de departamentos
  		context['lista_coleccion'] = Coleccion.objects.all()
  		return context
 		 
@@ -54,7 +53,6 @@ class AutorDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
  		context = super().get_context_data(**kwargs)
- 		# Añadir un listado de departamentos
  		context['coleccion_list'] = Coleccion.objects.all()
  		return context
 
@@ -66,7 +64,6 @@ class ComicDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
 		context = super().get_context_data(**kwargs)
-		# Añadir un listado de departamentos
 		context['coleccion_list'] = Coleccion.objects.all()
 		context['autor_list'] = Autor.objects.all()
 		context['tag_list'] = Tag.objects.all()
@@ -85,7 +82,7 @@ class ColeccionDetail(DetailView):
 		context['tag_list'] = Tag.objects.all()
 		return context
 
-class PageView(ListView):
+class PageView(DetailView):
 	template_name = 'pageView.html'
 
 	model = Comic
@@ -93,7 +90,6 @@ class PageView(ListView):
 	def get_context_data(self, **kwargs):
 		# Cargar el contexto base
 		context = super().get_context_data(**kwargs)
-		# Añadir un listado de departamentos
 		context['autor_list'] = Autor.objects.all()
 		context['tag_list'] = Tag.objects.all()
 		return context

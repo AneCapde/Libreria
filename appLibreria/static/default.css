@@ -196,8 +196,28 @@ body{
 	line-height:28px;
 }
 
+#sidebar h2{
+	color:#FFF000;
+	font:25px "Arial Black", Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	margin:30px 0 20px 0;
+	line-height:15px;
+}
+
 #sidebar h3{
 	background-color:#FFF000;
+	color:#ED145A;
+	font:13px "Arial Black", Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:-1px;
+	margin:0 0 10px 0;
+	padding-left:4px;
+	line-height:18px;
+}
+
+#sidebar h4{
+	background-color:#FFF;
 	color:#ED145A;
 	font:13px "Arial Black", Arial, Helvetica, sans-serif;
 	text-transform:uppercase;
