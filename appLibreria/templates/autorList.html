@@ -8,12 +8,15 @@
 	<li><a href="/appLibreria/colecciones/">Colecciones</a></li>
 	<li><a href="/appLibreria/tags/">Categorias</a></li>
 </ul>
+
 <h1>Autores Recomendados</h1>
-<h3>last updated: 10/31/06</h3>
-<ul id="gallery">
-	<li><a href="#"><b>First news item</b><br /><span class="spacer">&nbsp;</span><br />
-	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <i>Read More...</i></span></a></li>
-</ul> 
+<h3>Actuales:</h3>
+{% for autor in object_list %}
+	{% if autor.anyoNacimiento >= 2000 %}
+		<p class="recomendaciones"><a class="link-recomendacion" href="{{autor.get_absolute_url}}">{{ autor.nombre }}</a></p>
+	{% endif %}
+{% endfor %}
+
 {% endblock barraDer %}
 
 {% block contenido %}
