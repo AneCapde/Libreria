@@ -9,19 +9,10 @@ class Index(ListView):
 		 
 class ColeccionList(ListView):
 	template_name = 'coleccionList.html'
-	queryset = get_list_or_404(Coleccion.objects.all())
-
-	# def get_context_data(self, **kwargs):
-	# 	context = super().get_context_data(**kwargs)
-	# 	id_ = self.kwargs.get("pk")
-	# 	coleccion = Coleccion.objects.get(pk=id_)
-	# 	context['tags_coleccion'] =  coleccion.Tags.all()
-	# 	context['autores_coleccion'] =  coleccion.Autors.all()
-	# 	return context
+	model = Coleccion
 
 class AutorList(ListView):
 	template_name = 'autorList.html'
-
 	model = Autor
 
 class TagList(ListView):

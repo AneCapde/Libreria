@@ -42,7 +42,7 @@
 		{% for comic in object_list %}
 			<div class="espacio">
 				<h1>{{ comic.nombreComic }}</h1>
-				<h3> Coleccion : {{ comic.coleccion.nombreColeccion}} </h3>
+				<h3 class="color-rosa"> Coleccion : {{ comic.coleccion.nombreColeccion}} </h3>
 				<p><a href="{{comic.get_absolute_url}}"><img src="{% static 'img/comics/'|add:comic.nombreComic|add:'.png' %}" alt="{{ comic.nombreComic }}" class="responsive-img r_blog" /></a></p>
 				<div class="texto">
 					<p>Categoria del Comic:</p>

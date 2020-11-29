@@ -125,6 +125,10 @@ body{
 #content .espacio {
 	padding-bottom: 40px;
 }
+#content h3.color-rosa{
+	background-color:#ED145A;
+}
+
 #content .espacio .texto{
 	margin-left: 50px;
 	margin-top: 20px;
