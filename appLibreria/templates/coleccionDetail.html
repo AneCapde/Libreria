@@ -2,14 +2,25 @@
 {% load static %}
 <!--Bloques de la barra lateral:-->
 {% block foto %} <!--Aquí va la foto del objeto que estemos viendo (autor, comic o coleccion)-->
+<img src="{% static 'img/colecciones/'|add:object.nombreColeccion|add:'.png' %}" alt="{{ object.nombreColeccion }}" class="responsive-img r_blog" width="180" height="260" />
 {% endblock foto %}
 
 {% block info %} <!--Aquí se pone la info de lo que corresponda-->
+  <h3>Nombre: {{ object.nombreColeccion }}  </h3>
+  <h3>
+    <ul style="list-style-type:none; padding-left:0px;">
+      {% for autor in object.autores.all %}
+        <li><a href="{{autor.get_absolute_url}}">{{autor.nombre}}</a></li>
+      {% endfor %}
+    </ul>
+  </h3>
+  <h3>Primera publicación: {{ object.primeraPublicacion}} </h3>
+  <h3>Estado: {{ object.estado}} </h3>
 {% endblock info %}
 
 {% block menu %}<!--Esto es el menú donde irán los links a las listas de los modelos, igual que en la página principal-->
   <ul class="nav">
-        <li><a href="/appLibreria/comics/">Comics</a></li>
+       <li><a href="/appLibreria/comics/">Comics</a></li>
         <li><a href="/appLibreria/autores/">Autores</a></li>
         <li><a class="selected" href="/appLibreria/colecciones/">Colecciones</a></li>
         <li><a href="/appLibreria/tags/">Categorias</a></li>
@@ -17,5 +28,14 @@
 {% endblock menu %}
 
 {% block contenido %}<!--Lo de la "izquierda"-->
-<h1>{{object.nombreComic}}</h1>
+  {% for comic in object.comic_set.all %}
+        <div class="espacio">
+          <h1>{{ comic.nombreComic }}</h1>
+          <p><a href="{{comic.get_absolute_url}}"><img src="{% static 'img/comics/'|add:comic.nombreComic|add:'.png' %}" alt="{{ comic.nombreComic }}" class="responsive-img r_blog" /></a></p>
+          <div class="texto">
+            <p>Número de páginas: {{comic.numPaginas}}</p>
+          </div>
+        </div>
+        <br></br><br></br><br></br><br></br>
+		{% endfor %}
 {% endblock contenido %}

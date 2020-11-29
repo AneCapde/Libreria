@@ -19,13 +19,11 @@ class TagList(ListView):
 	template_name = 'tagList.html'
 	model = Tag
 
-	# def get_context_data(self, **kwargs):
-	# 	# Cargar el contexto base
-	# 	context = super().get_context_data(**kwargs)
-	# 	# Añadir un listado de departamentos
-	# 	context['coleccion_list'] = Coleccion.Tag.all()
-	# 	context['autor_list'] = Coleccion.Autor.all()
-	# 	return context
+	def get_context_data(self, **kwargs):
+	 	# Cargar el contexto base
+	 	context = super().get_context_data(**kwargs)
+	 	context['coleccion_list'] = Coleccion.objects.all()
+	 	return context
 
 class AutorDetail(DetailView):
 	template_name = 'autorDetail.html'
