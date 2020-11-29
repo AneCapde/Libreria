@@ -36,8 +36,7 @@
 <h1>{{object.nombreComic}}</h1>
 <h3 class="color-rosa">Coleccion : {{ object.coleccion.nombreColeccion}}</h3>
 {% for value in 0|range:object.numPaginas %}
-<p>'img/comics/{{object.nombreComic}}/{{value}}'.png'</p>
-<p><img src="{% static 'img/comics/'|add:object.nombreComic|add:'/'|add:value|add:'.png' %}" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></p>
+<p><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></p>
 {% endfor %}
 
 {% endblock contenido %}
