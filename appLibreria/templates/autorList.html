@@ -22,5 +22,12 @@
 {% endblock barraDer %}
 
 {% block contenido %}
+	{% for autor in object_list %}
+	<div class="espacio">
+		<h1>{{ autor.nombre }}</h1>
+		<h3></h3>
+		<p><a href="{{autor.get_absolute_url}}"><img src="{% static 'img/autores/'|add:autor.nombre|add:'.png' %}" alt="{{ autor.nombre }}" class="responsive-img r_blog" /></a>Right under the navigation menu to the right you will see a heading called Recent Updates. If you hover over the news items a short summary will pop up and allow you to click to get to another page. You can use this as a link list giving people a short description of what your link is about. I learned the technique from Stu at <a href="http://www.cssplay.co.uk/">CSS Play</a>. The original demo was to display a small photo gallery this way but I adapted it for text.</p>
+	</div>
+	{% endfor %}
 
 {% endblock contenido %}

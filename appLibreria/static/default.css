@@ -47,6 +47,17 @@ body{
 	line-height:18px;
 }
 
+#content .coleccion{
+	background-color: #ED145A;
+	color:#000;
+	font:13px "Arial Black", Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:-1px;
+	margin:0 60px 10px 30px;
+	padding-left:4px;
+	line-height:18px;
+}
+
 #content p{
 	font:12px Arial, Helvetica, sans-serif;
 	line-height:20px;
@@ -106,12 +117,21 @@ body{
 }
 
 #content img.responsive-img{
-	width: 150px;
-	height: 200px;
-	margin: 20px;  
+	width: 130px;
+	height: 180px;
+	margin: 10px;
+	margin-right: 50px;  
 }
 #content .espacio {
-	padding-bottom: 20px;
+	padding-bottom: 40px;
+}
+#content h3.color-rosa{
+	background-color:#ED145A;
+}
+
+#content .espacio .texto{
+	margin-left: 50px;
+	margin-top: 20px;
 }
 
 #content a:hover img{border-color:#ED145A;}
@@ -196,8 +216,28 @@ body{
 	line-height:28px;
 }
 
+#sidebar h2{
+	color:#FFF000;
+	font:25px "Arial Black", Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	margin:30px 0 20px 0;
+	line-height:15px;
+}
+
 #sidebar h3{
 	background-color:#FFF000;
+	color:#ED145A;
+	font:13px "Arial Black", Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:-1px;
+	margin:0 0 10px 0;
+	padding-left:4px;
+	line-height:18px;
+}
+
+#sidebar h4{
+	background-color:#FFF;
 	color:#ED145A;
 	font:13px "Arial Black", Arial, Helvetica, sans-serif;
 	text-transform:uppercase;
@@ -216,10 +256,17 @@ body{
 	border-top:none;
 }
 
+#sidebar p.recomendaciones{
+	margin-bottom: 10px;
+}
+
 #sidebar a{
-	color:#FFF000;
+	color:#ED145A;
 	font-weight:900;
 	text-decoration:none;
+}
+#sidebar a.link-recomendacion{
+	color: #FFF;
 }
 
 #sidebar a:hover{
