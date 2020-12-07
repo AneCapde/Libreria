@@ -9,5 +9,5 @@ urlpatterns = [
  path('autor/<int:pk>/', AutorDetail.as_view(), name='autorDetail'),
  path('comic/<int:pk>/', ComicDetail.as_view(), name='comicDetail'),
  path('coleccion/<int:pk>/', ColeccionDetail.as_view(), name='coleccionDetail'),
- path('comic/<int:pk>/numeroPaginahelp', PageView.as_view(), name='pageView'),#Próximamente con JS
+ path('comic/<int:pk>/<int:page>/', PageView.as_view(), name='pageView'),
 ]

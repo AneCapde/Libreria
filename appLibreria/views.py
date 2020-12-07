@@ -37,8 +37,7 @@ class ColeccionDetail(DetailView):
 class PageView(DetailView):
 	template_name = 'pageView.html'
 	model = Comic
-
-
-class Prueba(ListView):#Próximamente con JS
-	template_name = 'baseIndividual.html'
-	model = Comic
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		page_ = self.kwargs.get("page")
+		return page_

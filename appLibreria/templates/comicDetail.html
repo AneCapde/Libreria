@@ -36,7 +36,7 @@
 <h1>{{object.nombreComic}}</h1>
 <h3 class="color-rosa">Coleccion : {{ object.coleccion.nombreColeccion}}</h3>
 {% for value in 0|range:object.numPaginas %}
-<p><img src="{% static 'img/comics/' %}Baloncesto/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></p>
+<p><a href="{{object.get_absolute_url}}{{value}}"><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></a></p>
 <!--De momento hemos puesto que todas las páginas se vean de la misma carpeta para no tener que subir demasiadas imgenes. Para hacerlo dinámico
 habría que poner las siguiente línea de código:
 <p><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></p>
