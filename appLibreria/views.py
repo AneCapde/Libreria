@@ -40,4 +40,9 @@ class PageView(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		page_ = self.kwargs.get("page")
-		return page_
+		pk_ = self.kwargs.get("pk")
+		context = {
+			'Comic' :pk_,
+			'pagina' :page_
+		}
+		return context

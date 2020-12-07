@@ -5,10 +5,14 @@
 {% endblock foto %}
 
 {% block info %} <!--Aquí se pone la info de lo que corresponda-->
+
 {% endblock info %}
 
 {% block menu %}<!--Esto es el menú donde irán los links a las listas de los modelos, igual que en la página principal-->
+
 {% endblock menu %}
 
 {% block contenido %}<!--Lo de la "izquierda"-->
+
+<p><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{context.pagina}}.png" alt="{{ object.nombreComic }}" class="img-gl l_blog" /></p>
 {% endblock contenido %}
