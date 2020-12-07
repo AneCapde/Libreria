@@ -41,8 +41,9 @@ class PageView(DetailView):
 		context = super().get_context_data(**kwargs)
 		page_ = self.kwargs.get("page")
 		pk_ = self.kwargs.get("pk")
+		subcategory = Comic.objects.get(pk=pk_)
 		context = {
-			'Comic' :pk_,
+			'comic' :subcategory.nombreComic,
 			'pagina' :page_
 		}
 		return context
