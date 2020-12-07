@@ -122,6 +122,16 @@ body{
 	margin: 10px;
 	margin-right: 50px;  
 }
+
+#content img.Der{
+	max-width: 10px;
+	max-height: 10px;
+	margin: 10px;
+	margin-right: 50px;
+	width: auto;
+	height: auto;  
+}
+
 #content .espacio {
 	padding-bottom: 40px;
 }
