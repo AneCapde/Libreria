@@ -43,8 +43,6 @@ class PageView(DetailView):
 		pk_ = self.kwargs.get("pk")
 		subcategory = Comic.objects.get(pk=pk_)
 		context = {
-			'comic' :subcategory.nombreComic,
-			'num_pag' :subcategory.numPaginas,
 			'objecto_comic' : subcategory,
 			'pagina' :page_
 		}
