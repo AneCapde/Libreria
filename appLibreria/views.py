@@ -44,6 +44,8 @@ class PageView(DetailView):
 		subcategory = Comic.objects.get(pk=pk_)
 		context = {
 			'comic' :subcategory.nombreComic,
+			'num_pag' :subcategory.numPaginas,
+			'objecto_comic' : subcategory,
 			'pagina' :page_
 		}
 		return context
