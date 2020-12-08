@@ -19,10 +19,11 @@ function plusSlides(n) {
   slideIndex += n;
   showSlides(slideIndex);
 }
+
 function showSlides(n) {
-    slides = parseInt($('#slide').text());
     if (n == slides) {
         $('.next').css('pointer-events', 'none');
+        slideIndex = slideIndex - 1;
     } else if (n < 0) {
         $('.prev').css('pointer-events', 'none');
     } else {
@@ -30,7 +31,11 @@ function showSlides(n) {
         $('.prev').css('pointer-events', 'auto');
         $('.next').css('pointer-events', 'auto');
     }
-    
+}
+
+function updatePage() {
+    var pagina = parseInt($('#paginas').val());
+    changeURL(pagina);
 }
 function changeURL(n) {
     var theURL = window.location.pathname.split('/');
