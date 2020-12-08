@@ -42,8 +42,5 @@
     {% for value in 0|range:object.numPaginas %}
         <p><a id="fotoPagina" onmouseover="muestraMensaje()" href="{{object.get_absolute_url}}{{value}}"><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></a></p>
     {% endfor %}
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
 </section>
 {% endblock contenido %}

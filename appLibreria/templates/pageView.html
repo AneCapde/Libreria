@@ -4,7 +4,7 @@
 <!--Bloques de la barra lateral:-->
 {% block foto %} <!--Aquí va la foto del objeto que estemos viendo (autor, comic o coleccion)-->
 
-<img src="{% static 'img/comics/'|add:objecto_comic.nombreComic|add:'.png' %}" alt="{{ objecto_comic.nombreComic }}" class="responsive-img r_blog"/>
+<img src="{% static 'img/comics/'|add:objecto_comic.nombreComic|add:'.png' %}" alt="{{ objecto_comic.nombreComic }}" class="responsive-img r_blog" width="180" height="260"/>
 {% endblock foto %}
 
 {% block info %} <!--Aquí se pone la info de lo que corresponda-->
