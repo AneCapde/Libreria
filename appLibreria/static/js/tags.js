@@ -11,20 +11,24 @@ function updateResult(){
     }else if (seleccionados.length == 1){
         var id = '#'+seleccionados[0];
         $(id).removeClass('hide');
+    }else if (seleccionados.length == 2){
+        var id = '#'+seleccionados[0]+seleccionados[1];
+        $(id).removeClass('hide');
+    }else{
+        //solo filtramos hasta 2 selecciones
+        return;
     }
 }
 
 function hideEverything(){
-   if(! $('#Fantasia').hasClass('hide')){
     $('#Fantasia').addClass('hide');
-   }
-   if(! $('#Aventura').hasClass('hide')){
     $('#Aventura').addClass('hide');
-   }
-   if(! $('#Romantica ').hasClass('hide')){
-    $('#Romantica ').addClass('hide');
-   }
-   if(! $('#Historica ').hasClass('hide')){
-    $('#Historica ').addClass('hide');
-   }
+    $('#Romantica').addClass('hide');
+    $('#Historica').addClass('hide');
+    $('#FantasiaAventura').addClass('hide');
+    $('#FantasiaRomantica').addClass('hide');
+    $('#FantasiaHistorica').addClass('hide');
+    $('#AventuraRomantica ').addClass('hide');
+    $('#AventuraHistorica').addClass('hide');
+    $('#RomanticaHistorica').addClass('hide');
 }
