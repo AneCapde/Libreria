@@ -9,8 +9,15 @@
 	<li><a class="selected" href="/appLibreria/tags/">Categorias</a></li>
 </ul>
 <h1>Selecciona las categorias:</h1>
-<h3>Próximamente con JS</h3>
-		
+<br>
+<form id="form_categorias" onsubmit="updateResult()">		
+	{% for tag in object_list %}
+		<label for="{{ tag.descripcion }}">{{ tag.descripcion }}</label>							
+		<input type="checkbox" name="{{ tag.descripcion }}" id="{{ tag.descripcion }}" value="{{ tag.descripcion }}"><br>
+	{% endfor %}
+	<input id="enviar" type="submit" value="Submit">								
+</form>  	
+
 
 {% endblock barraDer %}
 

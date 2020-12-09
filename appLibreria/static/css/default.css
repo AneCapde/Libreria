@@ -318,6 +318,26 @@ body{
 	pointer-events: none;
 }
 
+#sidebar label {
+	color: white;
+	margin-top: 50px;
+	font-size: 18px;
+}
+
+#sidebar input[type=checkbox]{
+	margin: 10px;
+}
+#sidebar input[type=submit]{
+	margin: 10px;
+	width: 80px;
+    height: 30px;
+	margin-left: 30%;
+	background-color: #FFF000;
+	border-radius: 10px;
+	border-color: transparent;
+	cursor: pointer;
+}
+
 #footer{
 	color:#FFF;
 	height:288px;
