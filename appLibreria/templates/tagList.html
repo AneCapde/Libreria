@@ -34,12 +34,13 @@
 		{% for tag_1 in object_list %}
 		<div class="espacio hide" id="{{tag.descripcion}}{{tag_1.descripcion}}">
 			<h1>{{ tag.descripcion }} Y {{tag_1.descripcion}}</h1>
-			<h3 class="color-rosa"></h3> <br/>{% for coleccion in tag.coleccion_set.all %}
-			{% for coleccion_1 in tag_1.coleccion_set.all %}
-				{% if coleccion_1 == coleccion %}
-				<p><a href="{{coleccion.get_absolute_url}}"><img src="{% static 'img/colecciones/'|add:coleccion.nombreColeccion|add:'.png' %}" alt="{{ coleccion.nombreColeccion }}" class="responsive-img l_blog" /></a></p>
-				{% endif %}
-			{% endfor %}
+			<h3 class="color-rosa"> <br/></h3>
+			{% for coleccion in tag.coleccion_set.all %}
+				{% for coleccion_1 in tag_1.coleccion_set.all %}
+					{% if coleccion_1 == coleccion %}
+					<p><a href="{{coleccion.get_absolute_url}}"><img src="{% static 'img/colecciones/'|add:coleccion.nombreColeccion|add:'.png' %}" alt="{{ coleccion.nombreColeccion }}" class="responsive-img l_blog" /></a></p>
+					{% endif %}
+				{% endfor %}
 			{% endfor %}
 		</div>
 		{% endfor %}
