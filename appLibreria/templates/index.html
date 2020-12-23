@@ -1,5 +1,7 @@
 
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;" />
@@ -13,16 +15,31 @@
 	<div id="rightside">
 		<div id="title">
 		<p>CMD</p>
+			<form action="{% url 'set_language' %}" method="post">
+				{% csrf_token %}
+				<input name="next" type="hidden" value="{{ redirect_to }}" />
+				<select name="language">
+				{% get_current_language as LANGUAGE_CODE %}
+				{% get_available_languages as LANGUAGES %}
+				{% for lang in LANGUAGES %}
+				<option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                {{ lang.1 }} ({{ lang.0 }})
+				</option>
+				{% endfor %}
+				</select>
+				<input type="submit" value="Go" />
+			</form>
+		
 		</div>
 		<div id="sidebar">
 		{% block barraDer %}
 			<ul class="nav">
-				<li><a class="selected" href="/appLibreria/comics/">Comics</a></li>
-				<li><a href="/appLibreria/autores/">Autores</a></li>
-				<li><a href="/appLibreria/colecciones/">Colecciones</a></li>
-				<li><a href="/appLibreria/tags/">Categorias</a></li>
+				<li><a class="selected" href="/appLibreria/comics/">{% blocktrans %}Comics{% endblocktrans %}</a></li>
+				<li><a href="/appLibreria/autores/">{% blocktrans %}Autores{% endblocktrans %}</a></li>
+				<li><a href="/appLibreria/colecciones/">{% blocktrans %}Colecciones{% endblocktrans %}</a></li>
+				<li><a href="/appLibreria/tags/">{% blocktrans %}Categorias{% endblocktrans %}</a></li>
 			</ul>
-
+				
 
 			<h1>Comics Recomendados</h1>
 			<h3>Lectura Ligeras:</h3>
@@ -40,6 +57,9 @@
 
 	<div id="content">
 		{% block contenido %}
+		<h1>{% blocktrans %}Hola{% endblocktrans %}</h1>
+		<p>{% blocktrans %}Bienvenido al sitio{% endblocktrans %}</p>
+		
 		{% for comic in object_list %}
 			<div class="espacio">
 				<h1>{{ comic.nombreComic }}</h1>

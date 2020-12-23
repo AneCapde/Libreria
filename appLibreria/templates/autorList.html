@@ -1,16 +1,17 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block barraDer %}
 <ul class="nav">
-	<li><a href="/appLibreria/comics/">Comics</a></li>
-	<li><a class="selected" href="/appLibreria/autores/">Autores</a></li>
-	<li><a href="/appLibreria/colecciones/">Colecciones</a></li>
-	<li><a href="/appLibreria/tags/">Categorias</a></li>
+	<li><a href="/appLibreria/comics/">{% blocktrans %}Comics{% endblocktrans %}</a></li>
+	<li><a class="selected" href="/appLibreria/autores/">{% blocktrans %}Autores{% endblocktrans %}</a></li>
+	<li><a href="/appLibreria/colecciones/">{% blocktrans %}Colecciones{% endblocktrans %}</a></li>
+	<li><a href="/appLibreria/tags/">{% blocktrans %}Categorias{% endblocktrans %}</a></li>
 </ul>
 
-<h1>Autores Recomendados</h1>
-<h3>Actuales:</h3>
+<h1>{% blocktrans %}Autores Recomendados{% endblocktrans %}</h1>
+<h3>{% blocktrans %}Actuales:{% endblocktrans %}</h3>
 {% for autor in object_list %}
 	{% if autor.anyoNacimiento >= 2000 %}
 		<p class="recomendaciones"><a class="link-recomendacion" href="{{autor.get_absolute_url}}">{{ autor.nombre }}</a></p>
