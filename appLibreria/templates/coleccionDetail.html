@@ -29,13 +29,13 @@
 
 {% block contenido %}<!--Lo de la "izquierda"-->
   {% for comic in object.comic_set.all %}
-        <div class="espacio">
+      <div class="espacio">
           <h1>{{ comic.nombreComic }}</h1>
           <p><a href="{{comic.get_absolute_url}}"><img src="{% static 'img/comics/'|add:comic.nombreComic|add:'.png' %}" alt="{{ comic.nombreComic }}" class="responsive-img r_blog" /></a></p>
           <div class="texto">
             <p>Número de páginas: {{comic.numPaginas}}</p>
           </div>
-        </div>
-        <br></br><br></br><br></br><br></br>
-		{% endfor %}
+	  </div>
+	  <br><br><br><br><br><br><br><br><br>
+	{% endfor %}
 {% endblock contenido %}

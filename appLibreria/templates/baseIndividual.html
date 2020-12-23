@@ -5,7 +5,9 @@
 	<meta http-equiv="Content-Type" content="text/html;" />
 	<meta charset="UTF-8">
 	<title>Libreria piratilla :3</title>
-	<link rel="stylesheet" href="{% static 'default.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/default2.css' %}" />
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/page.js' %}"></script>
 </head>
 
 <body>
@@ -14,7 +16,7 @@
 		<div id="title">
 			<p>
 				{% block foto %} <!--Aquí va la foto del objeto que estemos viendo (autor, comic o coleccion)-->
-¡				{% endblock foto %}
+				{% endblock foto %}
 			</p>
 		</div>
 		<div id="sidebar">
@@ -30,6 +32,8 @@
 	<div id="content">
 		{% block contenido %}
 		{% endblock contenido %}
+	</div>
+	<div id="footer">
 	</div>
 </div>
 

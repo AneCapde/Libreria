@@ -1,5 +1,8 @@
 {% extends "baseIndividual.html" %}
 {% load static %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/prueba.js' %}"></script>
+	<script src="{% static 'js/ajax.js' %}"></script>
 {% load range %}
 <!--Bloques de la barra lateral:-->
 {% block foto %} <!--Aquí va la foto del objeto que estemos viendo (autor, comic o coleccion)-->
@@ -33,20 +36,11 @@
 {% endblock menu %}
 
 {% block contenido %}<!--Lo de la "izquierda"-->
-<h1>{{object.nombreComic}}</h1>
-<h3 class="color-rosa">Coleccion : {{ object.coleccion.nombreColeccion}}</h3>
-{% for value in 0|range:object.numPaginas %}
-<p><img src="{% static 'img/comics/' %}Baloncesto/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></p>
-<!--De momento hemos puesto que todas las páginas se vean de la misma carpeta para no tener que subir demasiadas imgenes. Para hacerlo dinámico
-habría que poner las siguiente línea de código:
-<p><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></p>
--->
-{% endfor %}
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-
+<section class="paginas">
+    <h1>{{object.nombreComic}}</h1>
+    <h3 class="color-rosa">Coleccion : {{ object.coleccion.nombreColeccion}}</h3>
+    {% for value in 0|range:object.numPaginas %}
+        <p><a id="fotoPagina" onmouseover="muestraMensaje()" href="{{object.get_absolute_url}}{{value}}"><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></a></p>
+    {% endfor %}
+</section>
 {% endblock contenido %}
