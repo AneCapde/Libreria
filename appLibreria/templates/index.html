@@ -1,4 +1,3 @@
-
 {% load static %}
 {% load i18n %}
 
@@ -29,6 +28,7 @@
 				</select>
 				<input type="submit" value="Go" />
 			</form>
+
 		
 		</div>
 		<div id="sidebar">
@@ -39,7 +39,7 @@
 				<li><a href="/appLibreria/colecciones/">{% blocktrans %}Colecciones{% endblocktrans %}</a></li>
 				<li><a href="/appLibreria/tags/">{% blocktrans %}Categorias{% endblocktrans %}</a></li>
 			</ul>
-				
+
 
 			<h1>Comics Recomendados</h1>
 			<h3>Lectura Ligeras:</h3>
@@ -59,7 +59,7 @@
 		{% block contenido %}
 		<h1>{% blocktrans %}Hola{% endblocktrans %}</h1>
 		<p>{% blocktrans %}Bienvenido al sitio{% endblocktrans %}</p>
-		
+
 		{% for comic in object_list %}
 			<div class="espacio">
 				<h1>{{ comic.nombreComic }}</h1>
