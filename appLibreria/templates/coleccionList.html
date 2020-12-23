@@ -1,16 +1,17 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block barraDer %}
 <ul class="nav">
-	<li><a href="/appLibreria/comics/">Comics</a></li>
-	<li><a href="/appLibreria/autores/">Autores</a></li>
-	<li><a class="selected" href="/appLibreria/colecciones/">Colecciones</a></li>
-	<li><a href="/appLibreria/tags/">Categorias</a></li>
+	<li><a href="/appLibreria/comics/">{% blocktrans %}Comics{% endblocktrans %}</a></li>
+	<li><a href="/appLibreria/autores/">{% blocktrans %}Autores{% endblocktrans %}</a></li>
+	<li><a class="selected" href="/appLibreria/colecciones/">{% blocktrans %}Colecciones{% endblocktrans %}</a></li>
+	<li><a href="/appLibreria/tags/">{% blocktrans %}Categorias{% endblocktrans %}</a></li>
 </ul>
 
-<h1>Colecciones Recomendados</h1>
-<h3>Finalizadas:</h3>
+<h1>{% blocktrans %}Colecciones Recomendados{% endblocktrans %}</h1>
+<h3>{% blocktrans %}Finalizadas:{% endblocktrans %}</h3>
 {% for coleccion in object_list %}
 	{% if coleccion.estado == 'FIN' %}
 		<p class="recomendaciones"><a class="link-recomendacion" href="{{coleccion.get_absolute_url}}">{{ coleccion.nombreColeccion }}</a></p>

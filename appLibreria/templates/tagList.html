@@ -1,14 +1,15 @@
 {% extends "index.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block barraDer %}
 <ul class="nav">
-	<li><a href="/appLibreria/comics/">Comics</a></li>
-	<li><a href="/appLibreria/autores/">Autores</a></li>
-	<li><a href="/appLibreria/colecciones/">Colecciones</a></li>
-	<li><a class="selected" href="/appLibreria/tags/">Categorias</a></li>
+	<li><a href="/appLibreria/comics/">{% blocktrans %}Comics{% endblocktrans %}</a></li>
+	<li><a href="/appLibreria/autores/">{% blocktrans %}Autores{% endblocktrans %}</a></li>
+	<li><a href="/appLibreria/colecciones/">{% blocktrans %}Colecciones{% endblocktrans %}</a></li>
+	<li><a class="selected" href="/appLibreria/tags/">{% blocktrans %}Categorias{% endblocktrans %}</a></li>
 </ul>
-<h1>Selecciona las categorias:</h1>
+<h1>{% blocktrans %}Selecciona las categorias:{% endblocktrans %}</h1>
 <br>
 <form id="form_categorias">		
 	{% for tag in object_list %}

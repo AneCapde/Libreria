@@ -1,5 +1,7 @@
 {% extends "baseIndividual.html" %}
 {% load static %}
+{% load i18n %}
+
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/prueba.js' %}"></script>
 	<script src="{% static 'js/ajax.js' %}"></script>
@@ -11,15 +13,15 @@
 
 {% block info %} <!--Aquí se pone la info de lo que corresponda-->
     <h1>{{object.nombreComic}}</h1>
-    <h3>Colección: {{object.coleccion.nombreColeccion}}</h3>
+    <h3>{% blocktrans %}Colección:{% endblocktrans %} {{object.coleccion.nombreColeccion}}</h3>
 	<h3>
-         Autor(es): 
+         {% blocktrans %}Autor(es):{% endblocktrans %} 
         {% for autor in object.coleccion.autores.all %}
         <a href="{{autor.get_absolute_url}}">{{autor.nombre}} {{autor.apellido}}</a>  
         {% endfor %}
     </h3>
     <h3> 
-        Tags: 
+        {% blocktrans %}Tags:{% endblocktrans %} 
         {% for tag in object.coleccion.tags.all %}
         {{tag.descripcion}}
         {% endfor %}
@@ -28,17 +30,17 @@
 
 {% block menu %}<!--Esto es el menú donde irán los links a las listas de los modelos, igual que en la página principal-->
     <ul class="nav">
-        <li><a class="selected" href="/appLibreria/comics/">Comics</a></li>
-        <li><a href="/appLibreria/autores/">Autores</a></li>
-        <li><a href="/appLibreria/colecciones/">Colecciones</a></li>
-        <li><a href="/appLibreria/tags/">Categorias</a></li>
+        <li><a class="selected" href="/appLibreria/comics/">{% blocktrans %}Comics{% endblocktrans %}</a></li>
+        <li><a href="/appLibreria/autores/">{% blocktrans %}Autores{% endblocktrans %}</a></li>
+        <li><a href="/appLibreria/colecciones/">{% blocktrans %}Colecciones{% endblocktrans %}</a></li>
+        <li><a href="/appLibreria/tags/">{% blocktrans %}Categorias{% endblocktrans %}</a></li>
     </ul>
 {% endblock menu %}
 
 {% block contenido %}<!--Lo de la "izquierda"-->
 <section class="paginas">
     <h1>{{object.nombreComic}}</h1>
-    <h3 class="color-rosa">Coleccion : {{ object.coleccion.nombreColeccion}}</h3>
+    <h3 class="color-rosa">{% blocktrans %}Coleccion :{% endblocktrans %} {{ object.coleccion.nombreColeccion}}</h3>
     {% for value in 0|range:object.numPaginas %}
         <p><a id="fotoPagina" onmouseover="muestraMensaje()" href="{{object.get_absolute_url}}{{value}}"><img src="{% static 'img/comics/' %}{{object.nombreComic}}/{{value}}.png" alt="{{ object.nombreComic }}" class="responsive-img l_blog" /></a></p>
     {% endfor %}

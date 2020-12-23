@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-23 17:14+0100\n"
+"POT-Creation-Date: 2020-12-23 18:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,25 +17,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\appLibreria\templates\autorDetail.html:10
+#: .\appLibreria\templates\coleccionDetail.html:10
+msgid "Nombre:"
+msgstr "Name:"
+
+#: .\appLibreria\templates\autorDetail.html:11
+msgid "Apellido:"
+msgstr "Surname:"
+
+#: .\appLibreria\templates\autorDetail.html:12
+msgid "Año Nacimiento:"
+msgstr "Birth Date:"
+
+#: .\appLibreria\templates\autorDetail.html:17
 #: .\appLibreria\templates\autorList.html:7
-#: .\appLibreria\templates\index.html:37
+#: .\appLibreria\templates\coleccionDetail.html:24
+#: .\appLibreria\templates\coleccionList.html:7
+#: .\appLibreria\templates\comicDetail.html:33
+#: .\appLibreria\templates\index.html:39 .\appLibreria\templates\tagList.html:7
 msgid "Comics"
 msgstr "Comics"
 
+#: .\appLibreria\templates\autorDetail.html:18
 #: .\appLibreria\templates\autorList.html:8
-#: .\appLibreria\templates\index.html:38
+#: .\appLibreria\templates\coleccionDetail.html:25
+#: .\appLibreria\templates\coleccionList.html:8
+#: .\appLibreria\templates\comicDetail.html:34
+#: .\appLibreria\templates\index.html:40 .\appLibreria\templates\tagList.html:8
 msgid "Autores"
 msgstr "Authors"
 
+#: .\appLibreria\templates\autorDetail.html:19
 #: .\appLibreria\templates\autorList.html:9
-#: .\appLibreria\templates\index.html:39
+#: .\appLibreria\templates\coleccionDetail.html:26
+#: .\appLibreria\templates\coleccionList.html:9
+#: .\appLibreria\templates\comicDetail.html:35
+#: .\appLibreria\templates\index.html:41 .\appLibreria\templates\tagList.html:9
 msgid "Colecciones"
-msgstr "Collection"
+msgstr "Collections"
 
+#: .\appLibreria\templates\autorDetail.html:20
 #: .\appLibreria\templates\autorList.html:10
-#: .\appLibreria\templates\index.html:40
+#: .\appLibreria\templates\coleccionDetail.html:27
+#: .\appLibreria\templates\coleccionList.html:10
+#: .\appLibreria\templates\comicDetail.html:36
+#: .\appLibreria\templates\index.html:42
+#: .\appLibreria\templates\tagList.html:10
 msgid "Categorias"
-msgstr "Cathegories"
+msgstr "Categories"
 
 #: .\appLibreria\templates\autorList.html:13
 msgid "Autores Recomendados"
@@ -45,10 +76,63 @@ msgstr "Recommended Authors"
 msgid "Actuales:"
 msgstr "Current ones:"
 
-#: .\appLibreria\templates\index.html:60
-msgid "Hola"
-msgstr "Hello"
+#: .\appLibreria\templates\coleccionDetail.html:18
+msgid "Primera publicación:"
+msgstr "First publication:"
 
-#: .\appLibreria\templates\index.html:61
-msgid "Bienvenido al sitio"
-msgstr "Welcome!"
+#: .\appLibreria\templates\coleccionDetail.html:19
+msgid "Estado:"
+msgstr "State:"
+
+#: .\appLibreria\templates\coleccionDetail.html:37
+msgid "Número de páginas:"
+msgstr "Number of pages:"
+
+#: .\appLibreria\templates\coleccionList.html:13
+msgid "Colecciones Recomendados"
+msgstr "Recommended Collections"
+
+#: .\appLibreria\templates\coleccionList.html:14
+msgid "Finalizadas:"
+msgstr "Finished:"
+
+#: .\appLibreria\templates\comicDetail.html:16
+msgid "Colección:"
+msgstr "Collection:"
+
+#: .\appLibreria\templates\comicDetail.html:18
+msgid "Autor(es):"
+msgstr "Author(s):"
+
+#: .\appLibreria\templates\comicDetail.html:24
+msgid "Tags:"
+msgstr "Tags:"
+
+#: .\appLibreria\templates\comicDetail.html:43
+#: .\appLibreria\templates\index.html:65
+msgid "Coleccion :"
+msgstr "Collection:"
+
+#: .\appLibreria\templates\index.html:46
+msgid "Comics Recomendados"
+msgstr "Recommended Comics"
+
+#: .\appLibreria\templates\index.html:47
+msgid "Lectura Ligeras:"
+msgstr "Light Read:"
+
+#: .\appLibreria\templates\index.html:68
+msgid "Categoria del Comic:"
+msgstr "Comic categories:"
+
+#: .\appLibreria\templates\index.html:74
+msgid "Autores:"
+msgstr "Authors:"
+
+#: .\appLibreria\templates\index.html:89
+msgid "Hurto del css por:"
+msgstr "CSS theft by:"
+
+#: .\appLibreria\templates\tagList.html:12
+msgid "Selecciona las categorias:"
+msgstr "Select categories:"

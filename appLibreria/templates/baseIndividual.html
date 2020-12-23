@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,12 +16,27 @@
 <div id="container">
 	<div id="rightside">
 		<div id="title">
+		
 			<p>
 				{% block foto %} <!--Aquí va la foto del objeto que estemos viendo (autor, comic o coleccion)-->
 				{% endblock foto %}
 			</p>
 		</div>
 		<div id="sidebar">
+		<form action="{% url 'set_language' %}" method="post">
+				{% csrf_token %}
+				<input name="next" type="hidden" value="{{ redirect_to }}" />
+				<select name="language">
+				{% get_current_language as LANGUAGE_CODE %}
+				{% get_available_languages as LANGUAGES %}
+				{% for lang in LANGUAGES %}
+				<option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                {{ lang.1 }} ({{ lang.0 }})
+				</option>
+				{% endfor %}
+				</select>
+				<input type="submit" value="Go" />
+			</form>
 		{% block info %} <!--Aquí se pone la info de lo que corresponda-->
 		{% endblock info %}
 		{% block menu %}<!--Esto es el menú donde irán los links a las listas de los modelos, igual que en la página principal-->

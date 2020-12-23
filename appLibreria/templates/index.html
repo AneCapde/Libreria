@@ -43,8 +43,8 @@
 			</ul>
 
 
-			<h1>Comics Recomendados</h1>
-			<h3>Lectura Ligeras:</h3>
+			<h1>{% blocktrans %}Comics Recomendados{% endblocktrans %}</h1>
+			<h3>{% blocktrans %}Lectura Ligeras:{% endblocktrans %}</h3>
 
 			{% for comic in object_list %}
 				{% if comic.numPaginas <= 10 %}
@@ -59,22 +59,19 @@
 
 	<div id="content">
 		{% block contenido %}
-		<h1>{% blocktrans %}Hola{% endblocktrans %}</h1>
-		<p>{% blocktrans %}Bienvenido al sitio{% endblocktrans %}</p>
-
 		{% for comic in object_list %}
 			<div class="espacio">
 				<h1>{{ comic.nombreComic }}</h1>
-				<h3 class="color-rosa"> Coleccion : {{ comic.coleccion.nombreColeccion}} </h3>
+				<h3 class="color-rosa"> {% blocktrans %}Coleccion :{% endblocktrans %} {{ comic.coleccion.nombreColeccion}} </h3>
 				<p><a href="{{comic.get_absolute_url}}"><img src="{% static 'img/comics/'|add:comic.nombreComic|add:'.png' %}" alt="{{ comic.nombreComic }}" class="responsive-img r_blog" /></a></p>
 				<div class="texto">
-					<p>Categoria del Comic:</p>
+					<p>{% blocktrans %}Categoria del Comic:{% endblocktrans %}</p>
 					<ul>
 						{% for tag in comic.coleccion.tags.all %}
 						<li>{{tag.descripcion}}</li>
 						{% endfor %}
 					</ul>
-					<p>Autores:</p> 
+					<p>{% blocktrans %}Autores:{% endblocktrans %}</p> 
 					<ul>
 						{% for autores in comic.coleccion.autores.all %}
 						<li><a href="{{autores.get_absolute_url}}">{{autores.nombre}}</a></li>
@@ -89,7 +86,7 @@
 	<div id="footer">
 		<div class="footer_links">
 		<ul>
-			<li class="top_link">Hurto del css por:</li>
+			<li class="top_link">{% blocktrans %}Hurto del css por:{% endblocktrans %}</li>
 			<li><a>Ane Capdevila</a></li>
 			<li><a>Mikel Fuentes</a></li>
 			<li><a>Jon Díaz</a></li>
