@@ -30,3 +30,7 @@
 	{% endfor %}
 
 {% endblock contenido %}
+
+{% block Numero %}
+	<li><a>{% blocktrans %}Autores Totales {% endblocktrans %}{{object_list.count}}</a></li>
+{% endblock Numero %}

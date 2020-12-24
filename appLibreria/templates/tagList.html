@@ -48,3 +48,7 @@
 	{% endfor %}
 	
 {% endblock contenido %}
+
+{% block Numero %}
+	<li><a>{% blocktrans %}Tags Totales {% endblocktrans %}{{object_list.count}}</a></li>
+{% endblock Numero %}
