@@ -1,0 +1,7 @@
+{% load static %}
+
+{% block fotos %}
+<div class="post">
+    <img alt="{{ object.nombre }}" class="post-avatar" src="{% static 'img/autores/' %}{{object.nombre}}.png" />
+</div>
+{% endblock fotos %}

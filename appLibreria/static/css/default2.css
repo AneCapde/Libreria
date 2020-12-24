@@ -351,3 +351,15 @@ body{
 	border: 1px solid #e5e5e5;
 	padding: 10px;
 }
+
+@media only screen and (min-width: 1800px) {
+	.next {
+		right: 40%;
+		border-radius: 3px 0 0 3px;
+	}
+	.img-gl {
+		margin-top: 20%;
+		width: 60%;
+		height: 100%;
+	}
+}

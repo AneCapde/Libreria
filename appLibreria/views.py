@@ -47,3 +47,7 @@ class PageView(DetailView):
 			'pagina' :page_
 		}
 		return context
+	
+class Ajax(DetailView):
+	template_name = 'ajax.html'
+	model = Autor

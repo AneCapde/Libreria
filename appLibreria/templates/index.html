@@ -8,7 +8,9 @@
 	<title>Libreria piratilla :3</title>
 	<link rel="stylesheet" href="{% static 'css/default.css' %}" />
 	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/jquery.qtip-1.0.0-rc3.min.js' %}"></script>
 	<script src="{% static 'js/tags.js' %}"></script>
+	<script src="{% static 'js/ajax.js' %}"></script>
 </head>
 
 <body>
@@ -74,7 +76,7 @@
 					<p>{% blocktrans %}Autores:{% endblocktrans %}</p> 
 					<ul>
 						{% for autores in comic.coleccion.autores.all %}
-						<li><a href="{{autores.get_absolute_url}}">{{autores.nombre}}</a></li>
+						<li><a data-store="{{autores.pk}}" href="{{autores.get_absolute_url}}">{{autores.nombre}}</a></li>
 						{% endfor %}
 					</ul>
 				</div>
